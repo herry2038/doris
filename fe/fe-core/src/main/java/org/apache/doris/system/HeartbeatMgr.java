@@ -113,7 +113,7 @@ public class HeartbeatMgr extends MasterDaemon {
         for (Frontend frontend : frontends) {
             FrontendHeartbeatHandler handler = new FrontendHeartbeatHandler(frontend,
                     Env.getCurrentEnv().getClusterId(),
-                    Env.getCurrentEnv().getToken(), ExecuteEnv.getInstance().getStartupTime());
+                    Env.getCurrentEnv().getToken());
             hbResponses.add(executor.submit(handler));
         }
 
@@ -284,19 +284,11 @@ public class HeartbeatMgr extends MasterDaemon {
         private Frontend fe;
         private int clusterId;
         private String token;
-        private long callerFeStartTime;
 
         public FrontendHeartbeatHandler(Frontend fe, int clusterId, String token) {
             this.fe = fe;
             this.clusterId = clusterId;
             this.token = token;
-        }
-
-        public FrontendHeartbeatHandler(Frontend fe, int clusterId, String token, long callerFeStartTime) {
-            this.fe = fe;
-            this.clusterId = clusterId;
-            this.token = token;
-            this.callerFeStartTime = callerFeStartTime;
         }
 
         @Override
@@ -307,7 +299,7 @@ public class HeartbeatMgr extends MasterDaemon {
                 if (Env.getCurrentEnv().isReady()) {
                     return new FrontendHbResponse(fe.getNodeName(), Config.query_port, Config.rpc_port,
                             Env.getCurrentEnv().getMaxJournalId(), System.currentTimeMillis(),
-                            Version.DORIS_BUILD_VERSION + "-" + Version.DORIS_BUILD_SHORT_HASH, callerFeStartTime);
+                            Version.DORIS_BUILD_VERSION + "-" + Version.DORIS_BUILD_SHORT_HASH, ExecuteEnv.getInstance().getStartupTime());
                 } else {
                     return new FrontendHbResponse(fe.getNodeName(), "not ready");
                 }
