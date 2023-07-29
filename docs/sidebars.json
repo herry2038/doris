@@ -713,7 +713,7 @@
                                 "sql-manual/sql-functions/table-functions/backends",
                                 "sql-manual/sql-functions/table-functions/frontends",
                                 "sql-manual/sql-functions/table-functions/workload-group",
-				"sql-manual/sql-functions/table-functions/catalogs"
+                                "sql-manual/sql-functions/table-functions/catalogs"
                             ]
                         },
                         {
@@ -917,7 +917,6 @@
                                         "sql-manual/sql-reference/Data-Definition-Statements/Backup-and-Restore/CANCEL-BACKUP",
                                         "sql-manual/sql-reference/Data-Definition-Statements/Backup-and-Restore/RESTORE",
                                         "sql-manual/sql-reference/Data-Definition-Statements/Backup-and-Restore/CANCEL-RESTORE"
-                                        
                                     ]
                                 }
                             ]
@@ -1028,6 +1027,7 @@
                                 "sql-manual/sql-reference/Show-Statements/SHOW-WORKLOAD-GROUPS",
                                 "sql-manual/sql-reference/Show-Statements/SHOW-PARTITIONS",
                                 "sql-manual/sql-reference/Show-Statements/SHOW-FRONTENDS",
+                                "sql-manual/sql-reference/Show-Statements/SHOW-FRONTENDS-DISKS",
                                 "sql-manual/sql-reference/Show-Statements/SHOW-RESTORE",
                                 "sql-manual/sql-reference/Show-Statements/SHOW-PROPERTY",
                                 "sql-manual/sql-reference/Show-Statements/SHOW-TRIGGERS",
@@ -1267,7 +1267,7 @@
             "items": [
                 "releasenotes/release-2.0-beta",
                 "releasenotes/release-2.0.0Alpha1",
-	        "releasenotes/release-1.2.6",
+                "releasenotes/release-1.2.6",
                 "releasenotes/release-1.2.5",
                 "releasenotes/release-1.2.4.1",
                 "releasenotes/release-1.2.3",
